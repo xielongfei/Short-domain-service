@@ -6,7 +6,7 @@
 - domain-web 域名web层，提供http接口，适配层
 
 ## 架构图：
-![22](https://files.mdnice.com/user/15983/086b8493-d5d1-4e4f-84be-89f9fe05d0a2.png)
+![架构图](https://files.mdnice.com/user/15983/086b8493-d5d1-4e4f-84be-89f9fe05d0a2.png)
 
 ## 测试报告图：
 domain-infrastructure层报告截图
