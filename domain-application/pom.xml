@@ -9,12 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>domain-infrastructure</artifactId>
+    <artifactId>domain-application</artifactId>
+
 
     <dependencies>
         <dependency>
             <groupId>com.domain</groupId>
             <artifactId>domain-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.domain</groupId>
+            <artifactId>domain-infrastructure</artifactId>
             <version>${project.version}</version>
         </dependency>
 

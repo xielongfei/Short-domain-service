@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.domain</groupId>
-            <artifactId>domain-infrastructure</artifactId>
+            <artifactId>domain-application</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -37,6 +37,15 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
         </dependency>
     </dependencies>
 </project>

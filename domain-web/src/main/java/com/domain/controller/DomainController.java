@@ -1,6 +1,8 @@
 package com.domain.controller;
 
 import com.domain.IDomainStoreService;
+import com.domain.model.DomainDTO;
+import com.domain.model.Response;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,16 +25,16 @@ public class DomainController {
 
     @ApiOperation(value = "获取短域名")
     @GetMapping(value = "/getShortDomain")
-    public Object getShortDomain(String url){
-        String text = storeService.addDomain(url);
-        return text;
+    public Object getShortDomain(DomainDTO domainDTO){
+        Response response = storeService.addDomain(domainDTO);
+        return response;
     }
 
     @ApiOperation(value = "获取长域名")
     @GetMapping(value = "/getLongDomain")
-    public Object getLongDomain(String url){
-        String text = storeService.getDomain(url);
-        return text;
+    public Object getLongDomain(DomainDTO domainDTO){
+        Response response = storeService.getDomain(domainDTO);
+        return response;
     }
 
 }

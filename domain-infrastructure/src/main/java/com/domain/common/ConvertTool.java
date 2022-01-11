@@ -1,11 +1,15 @@
 package com.domain.common;
 
+import java.util.Random;
+
 /**
  * @author: xielongfei
  * @date: 2022/01/09
  * @description: 转换字符串工具类
  */
 public class ConvertTool {
+
+    public static final String domain_prefix = "http://do.com/";
 
     /**
      * 参考Integer.toString();
@@ -32,15 +36,18 @@ public class ConvertTool {
      * @return
      */
     public static String toString(int i) {
-        int radix = 30;
+        int radix = 61;
+        //存储转换进制后字符数组
         char[] buf = new char[12];
         boolean negative = (i < 0);
+        //将指针指向buf数组的最后一位，以便后边存放字符
         int charPos = 11;
 
         if (!negative) {
             i = -i;
         }
 
+        //使用短除法来转换进制
         while (i <= -radix) {
             buf[charPos--] = digits[-(i % radix)];
             i = i / radix;
@@ -50,8 +57,12 @@ public class ConvertTool {
         if (negative) {
             buf[--charPos] = '-';
         }
+        //不够8字符，随机补全，减少字符串冲突概率
+        while (charPos > 4) {
+            buf[--charPos] = digits[new Random().nextInt(61)];
+        }
 
-        return String.valueOf(buf, charPos, 12 - charPos);
+        return String.valueOf(buf, charPos, 8);
     }
 
     /**
@@ -63,4 +74,5 @@ public class ConvertTool {
         int hash = Math.abs(s.hashCode());
         return toString(hash);
     }
+
 }

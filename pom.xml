@@ -11,7 +11,8 @@
     <modules>
         <module>domain-web</module>
         <module>domain-infrastructure</module>
-        <module>domain-service</module>
+        <module>domain-api</module>
+        <module>domain-application</module>
     </modules>
 
     <name>Domain Parent</name>
@@ -29,6 +30,7 @@
         <org.projectlombok.version>1.18.16</org.projectlombok.version>
         <junit.version>4.13.1</junit.version>
         <org.jacoco.version>0.8.6</org.jacoco.version>
+        <org.testng.version>6.9.10</org.testng.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +63,12 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${org.jacoco.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${org.testng.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

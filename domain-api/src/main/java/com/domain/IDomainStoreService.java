@@ -1,5 +1,8 @@
 package com.domain;
 
+import com.domain.model.DomainDTO;
+import com.domain.model.Response;
+
 /**
  * @author: xielongfei
  * @date: 2022/01/09
@@ -10,10 +13,10 @@ public interface IDomainStoreService {
     /**
      * 新增一个域名
      */
-    String addDomain(String text);
+    Response addDomain(DomainDTO domainDTO);
 
     /**
      * 查询一个域名
      */
-    String getDomain(String text);
+    Response getDomain(DomainDTO domainDTO);
 }
