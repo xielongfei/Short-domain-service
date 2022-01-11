@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -46,9 +46,9 @@ public class DomainControllerTest extends AbstractTestNGSpringContextTests {
     public void testGetShortDomain() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getShortDomain")
                         .contentType(MediaType.TEXT_HTML_VALUE)
-                        .queryParam("url", "https://www.baidu.com"))
+                        .queryParam("longUrl", "https://www.baidu.com"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("246so88")));
+                .andExpect(content().string(notNullValue()));
     }
 
     /**
@@ -58,8 +58,8 @@ public class DomainControllerTest extends AbstractTestNGSpringContextTests {
     public void testGetLongDomain() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/getLongDomain")
                 .contentType(MediaType.TEXT_HTML_VALUE)
-                .queryParam("url", "246so88"))
+                .queryParam("shortUrl", "http://do.com/l61PIviH"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("https://www.baidu.com")));
+                .andExpect(content().string(notNullValue()));
     }
 }

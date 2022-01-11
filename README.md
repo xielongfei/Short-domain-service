@@ -18,8 +18,11 @@
 ![](https://files.mdnice.com/user/15983/a6d7df75-12fe-420c-bde7-777e4b12270e.png)
 
 ## 测试报告图：
+domain-web层报告截图
+![](https://files.mdnice.com/user/15983/04678bcc-f2de-41e1-aa75-01619a3d8fe8.png)
+
 domain-infrastructure层报告截图
-![](https://files.mdnice.com/user/15983/5f302552-7450-454b-963a-582d8495ff6f.png)
+![](https://files.mdnice.com/user/15983/b700f2ec-9461-49cd-b28b-5a55df364415.png)
 
 
 ### 防内存溢出思路
